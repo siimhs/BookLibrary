@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="LibraryWPF.Views.SignUpPageView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:LibraryWPF.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="350"
+    d:DesignWidth="700"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel Width="150" VerticalAlignment="Center">
+            <Label x:Name="FirstNameSignUpLabel" Content="First Name" />
+            <TextBox x:Name="FirstNamenameSignUpTextBox" Text="{Binding FirstName, Mode=TwoWay}" />
+            <Label x:Name="LastNameSignUpLabel" Content="Last Name" />
+            <TextBox x:Name="LastNameSignUpTextBox" Text="{Binding LastName, Mode=TwoWay}" />
+            <Label x:Name="UsernameSignUpLabel" Content="Username" />
+            <TextBox x:Name="UsernameSignUpTextBox" Text="{Binding Username, Mode=TwoWay}" />
+            <Label x:Name="PasswordSignUpLabel" Content="Password" />
+            <PasswordBox x:Name="PasswordSignUpTextBox" />
+            <!--<Label x:Name="RetypePasswordSignUpLabel" Content="Retype Password" />
+            <PasswordBox x:Name="RetypePasswordSignUpTextBox" />-->
+            <Button
+                x:Name="SubmitNewFormButton"
+                Height="24"
+                Margin="0,10,0,0"
+                Command="{Binding Path=SubmitNewFormCommand}"
+                CommandParameter="{Binding ElementName=PasswordSignUpTextBox}"
+                Content="Submit!"
+                IsDefault="True" />
+
+            <Label
+                x:Name="NewFormValidationErrorLabel"
+                Height="40"
+                Foreground="Red"
+                Content="{Binding NewFormValidationError}" />
+        </StackPanel>
+    </Grid>
+</UserControl>
+<!--
+    Command="{Binding Path=DataContext.SubmitNewFormCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+    CommandParameter="{Binding ElementName=P}"
+-->
+
+<!--  Command="{Binding Path=DataContext.SubmitNewFormCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  -->
